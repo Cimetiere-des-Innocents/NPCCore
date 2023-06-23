@@ -160,6 +160,23 @@ jar {
     }
 }
 
+task apiJar(type: Jar) {
+    archiveClassifier.set('api')
+    include 'xyz/chlamydomonos/npccore/api/**/*'
+    from sourceSets.main.output
+    from sourceSets.main.allSource
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier.set('sources')
+    from sourceSets.main.allJava
+}
+
+artifacts {
+    archives apiJar
+    archives sourcesJar
+}
+
 // Example configuration to allow publishing using the maven-publish plugin
 // This is the preferred method to reobfuscate your jar file
 jar.finalizedBy('reobfJar')
