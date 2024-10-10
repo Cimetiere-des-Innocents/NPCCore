@@ -1,6 +1,6 @@
 package xyz.cimetieredesinnocents.npccore.entity
 
-import net.minecraft.network.chat.Component
+import icyllis.modernui.mc.neoforge.MuiForgeApi
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.EntityType
@@ -12,8 +12,7 @@ import net.minecraft.world.phys.Vec3
 import software.bernie.geckolib.animatable.GeoEntity
 import software.bernie.geckolib.animation.AnimatableManager
 import software.bernie.geckolib.util.GeckoLibUtil
-import xyz.cimetieredesinnocents.npccore.gui.NPCScreen
-import xyz.cimetieredesinnocents.npccore.gui.ScreenOpener
+import xyz.cimetieredesinnocents.npccore.gui.NPCFragment
 
 class NPCEntity(entityType: EntityType<out PathfinderMob>, level: Level) : PathfinderMob(entityType, level), GeoEntity {
     companion object {
@@ -35,7 +34,7 @@ class NPCEntity(entityType: EntityType<out PathfinderMob>, level: Level) : Pathf
         if (!isClientSide) {
             return InteractionResult.SUCCESS
         }
-        ScreenOpener.open(NPCScreen(Component.literal("npc")))
+        MuiForgeApi.openScreen(NPCFragment())
         return InteractionResult.SUCCESS
     }
 }
