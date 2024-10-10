@@ -8,6 +8,11 @@ plugins {
 version = mod_version
 group = mod_group_id
 
+configurations {
+    library
+    implementation.extendsFrom library
+}
+
 repositories {
     mavenLocal()
     maven {
@@ -21,6 +26,10 @@ repositories {
         content {
             includeGroup("software.bernie.geckolib")
         }
+    }
+    maven {
+        name 'IzzelAliz Maven'
+        url 'https://maven.izzel.io/releases/'
     }
 }
 
@@ -132,6 +141,13 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
     implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}"
+
+    // Modern UI core framework
+    library "icyllis.modernui:ModernUI-Core:${modernui_version}"
+    // Modern UI core extensions
+    library "icyllis.modernui:ModernUI-Markdown:${modernui_version}"
+    // Modern UI for Minecraft NeoForge
+    implementation(additionalRuntimeClasspath "icyllis.modernui:ModernUI-NeoForge:${minecraft_version}-${modernui_version}.+")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

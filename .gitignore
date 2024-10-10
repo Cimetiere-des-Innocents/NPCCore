@@ -1,4 +1,6 @@
 # User-specific stuff
+.kotlin/
+local/
 .idea/
 
 *.iml

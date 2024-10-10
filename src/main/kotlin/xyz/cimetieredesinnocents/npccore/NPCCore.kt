@@ -1,5 +1,6 @@
 package xyz.cimetieredesinnocents.npccore
 
+import net.minecraft.resources.ResourceLocation
 import net.neoforged.fml.common.Mod
 import org.apache.logging.log4j.LogManager
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
@@ -14,4 +15,6 @@ object NPCCore {
     init {
         EntityLoader.register(MOD_BUS)
     }
+
+    fun rl(path: String) = ResourceLocation.fromNamespaceAndPath(ID, path)
 }
