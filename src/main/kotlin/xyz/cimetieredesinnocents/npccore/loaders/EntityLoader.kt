@@ -1,4 +1,4 @@
-package xyz.cimetieredesinnocents.npccore.entity
+package xyz.cimetieredesinnocents.npccore.loaders
 
 import net.minecraft.core.registries.Registries
 import net.minecraft.world.entity.Entity
@@ -12,6 +12,7 @@ import net.neoforged.neoforge.registries.DeferredHolder
 import net.neoforged.neoforge.registries.DeferredRegister
 import thedarkcolour.kotlinforforge.neoforge.forge.getValue
 import xyz.cimetieredesinnocents.npccore.NPCCore
+import xyz.cimetieredesinnocents.npccore.entity.NPCEntity
 
 @EventBusSubscriber(modid = NPCCore.ID, bus = EventBusSubscriber.Bus.MOD)
 object EntityLoader {
